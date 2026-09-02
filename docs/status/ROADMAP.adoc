@@ -18,22 +18,86 @@ f19-stealth-glider -> f117a-stealth-glider -> sr71-blackglider -> x15-rocket-gli
   proven-inert 3D camera over the 2D world.
 . *sr71-blackglider* (SR-71 BlackGlider), in progress. A single uncompromised
   Conway spacetime with proof-bearing geometric flight presentation.
-. *x15-rocket-glider*, reserved. Scope not yet specified. The full name is
-  X15-rocket-glider; it is not to be shortened to X-15.
-. *planer-1* (Планер-1), reserved. Scope not yet specified.
-. *enterglide-ncc-137-k* (Enterglide NCC-137-K), reserved. Scope not yet
-  specified. The name is a Star Trek registry joke; spaces become dashes in
-  the slug.
-. *tardis-rule-disruption* (TARDIS), reserved. Recorded intent:
-  Totally-Adherent Rule-Disruption Imitation System: a machine that visibly appears to break and simulate disruption of rules while remaining mathematically Conway-lawful underneath.
+. *x15-rocket-glider*, reserved, intent recorded. Resource mechanics:
+  munitions and fuel on the Life field. The full name is X15-rocket-glider;
+  it is not to be shortened to X-15.
+. *planer-1* (Планер-1), reserved, intent recorded. Orbits around Riemann
+  spheres. Планер is Russian for glider or sailplane; the name is a
+  Спутник-1 joke, and the slug is a transliteration, not "planar".
+. *enterglide-ncc-137-k* (Enterglide NCC-137-K), reserved, intent recorded.
+  Topology of knots (the K). NCC nods to astronomy's catalogue acronyms
+  (and the Star Trek registry); 137 points at the Varying-Constants
+  hypothesis. Spaces become dashes in the slug.
+. *tardis-rule-disruption* (TARDIS), reserved, intent recorded.
+  Totally-Adherent Rule-Disruption Imitation System: make a Conway Game of
+  Life set-up look as much like reality as possible while never breaking
+  B3/S23. See the stage intents below.
+
+== Stage intents (recorded 2026-09-02, owner ruling)
+
+These are the owner's stated intents for the four reserved stages. Intent is
+not work begun: each stage keeps CLADE phase `reserved` until its first
+content lands by pull request in its own repository. Until 2026-09-02 these
+intents existed only in conversation; this section is their durable home.
+
+=== Stage 4, X15-rocket-glider
+
+Resource-type things arrive here: munitions and fuel, spent and replenished
+on the live Conway field, so that every move has a cost as well as a lawful
+successor state. How the resources are represented on the field, and what
+gates they must pass, is not yet specified.
+
+=== Stage 5, Планер-1
+
+Handles orbits around Riemann spheres, taking the line from a flat field to
+motion around a compactified plane. The name is a joke on Спутник-1: Планер
+is the Russian word for a glider or sailplane (a powered plane would be
+самолёт), so Планер-1 reads as "Glider-1", the orbital one. The slug
+`planer-1` is the transliteration; it is not "planar", which is precisely
+what a Riemann sphere is not.
+
+=== Stage 6, Enterglide NCC-137-K
+
+Starts handling the topology of knots; that is what the K at the end of the
+code refers to. NCC is a reference to the galaxy and space catalogue acronyms
+of astronomy, with the Star Trek registry echo intended. 137 points at the
+"Varying Constants" hypothesis: the idea that the equivalence around the
+number 137, the inverse fine-structure constant, may change over time. That
+is the focus.
+
+=== Stage 7, TARDIS
+
+The full thing, a super step ahead of the rest of the line: find a way to
+make a Conway Game of Life set-up look as much like "reality" as it can
+possibly be, with the absolute requirement of never breaking the laws. The
+acronym leads with *Totally* on purpose (Totally-Adherent Rule-Disruption
+Imitation System): it is about *appearing* to break the rules even though
+that is not what happens.
+
+Two parts are recorded separately:
+
+* Hard invariant: B3/S23 is never broken. This is checkable.
+* Open target: the result resembles reality. This stays unmeasured until a
+  measure is chosen, and is deliberately not a gate yet.
+
+It is a lifetime, open-ended research project, probably never to be
+completed and quite possibly impossible. The hope is that after all the
+mathematics games and demonstrations along the way, people will think that
+maybe anything is possible, or close to it, and take it off in other
+directions with weird applications. Even if the reality target is out of
+reach, the work is adaptable as a maths challenge, an educational piece on
+constraints, or game-design thinking. The owner's own tagline, offered as a
+joke: "maybe I'm the next Euclid... Euclid with cells rather than the
+floorboard tiles."
 
 == Status
 
 * [x] Chain and membership manifest published in this hub
 * [x] Four reserved members minted with identity and lineage
-* [ ] All seven members exist on GitHub and carry the chain (remote gate green)
+* [x] All seven members exist on GitHub and carry the chain (remote gate green)
 * [ ] Hub and members registered in gv-clade-index
-* [ ] Scope specified for stages four, five and six
+* [x] Intent recorded for stages four to seven (2026-09-02, owner ruling)
+* [ ] Specification (question, boundaries, first gate) for stages four to seven
 
 == Rules of the line
 

@@ -22,19 +22,20 @@ what the line shares.
 f19-stealth-glider -> f117a-stealth-glider -> sr71-blackglider -> x15-rocket-glider -> planer-1 -> enterglide-ncc-137-k -> tardis-rule-disruption
 ----
 
-[cols="1,3,3,2,2",options="header"]
+[cols="1,3,3,2,2,5",options="header"]
 |===
-| # | Display name | Repository | Group | Phase
-| 1 | Operation Nightstep v2 | https://github.com/metadatastician/f19-stealth-glider[f19-stealth-glider] | shipped | active
-| 2 | Operation Nightglass | https://github.com/metadatastician/f117a-stealth-glider[f117a-stealth-glider] | shipped | active
-| 3 | SR-71 BlackGlider | https://github.com/metadatastician/sr71-blackglider[sr71-blackglider] | in-progress | incubating
-| 4 | X15-rocket-glider | https://github.com/metadatastician/x15-rocket-glider[x15-rocket-glider] | reserved | reserved
-| 5 | Планер-1 | https://github.com/metadatastician/planer-1[planer-1] | reserved | reserved
-| 6 | Enterglide NCC-137-K | https://github.com/metadatastician/enterglide-ncc-137-k[enterglide-ncc-137-k] | reserved | reserved
-| 7 | TARDIS | https://github.com/metadatastician/tardis-rule-disruption[tardis-rule-disruption] | reserved | reserved
+| # | Display name | Repository | Group | Phase | One line
+| 1 | Operation Nightstep v2 | https://github.com/metadatastician/f19-stealth-glider[f19-stealth-glider] | shipped | active | Stealth puzzle on a live Conway field: substrate interaction, phase, causal TRACE.
+| 2 | Operation Nightglass | https://github.com/metadatastician/f117a-stealth-glider[f117a-stealth-glider] | shipped | active | Cover that moves; radar and a proven-inert 3D camera over the 2D world.
+| 3 | SR-71 BlackGlider | https://github.com/metadatastician/sr71-blackglider[sr71-blackglider] | in-progress | incubating | Formally-verified Life engine; geometry may render history but never author it.
+| 4 | X15-rocket-glider | https://github.com/metadatastician/x15-rocket-glider[x15-rocket-glider] | reserved | reserved | Intent: resource mechanics (munitions, fuel) on the Life field.
+| 5 | Планер-1 | https://github.com/metadatastician/planer-1[planer-1] | reserved | reserved | Intent: orbits around Riemann spheres. Планер = glider; a Sputnik-1 nod.
+| 6 | Enterglide NCC-137-K | https://github.com/metadatastician/enterglide-ncc-137-k[enterglide-ncc-137-k] | reserved | reserved | Intent: knot topology (the K); 137 = Varying-Constants focus; NCC = catalogue nod.
+| 7 | TARDIS | https://github.com/metadatastician/tardis-rule-disruption[tardis-rule-disruption] | reserved | reserved | Intent: make Life look like reality while never breaking B3/S23. Open-ended.
 |===
 
-The machine-readable form of this table is `[members]` in
+Intents for stages four to seven were recorded 2026-09-02 by owner ruling; see
+`docs/status/ROADMAP.adoc`. The machine-readable form of this table is `[members]` in
 `machine-readable/descriptiles/ECOSYSTEM.a2ml`.
 
 == Owned here
