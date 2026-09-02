@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: MPL-2.0
+name: Anchor Drift
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly, so a member that drops the chain surfaces even with no push here.
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  membership-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Offline negative control (the gate must be able to fail)
+        run: bash tests/check-membership-test.sh
+      - name: Membership integrity against member repositories on GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/check-membership.sh

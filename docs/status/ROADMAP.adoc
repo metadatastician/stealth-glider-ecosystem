@@ -1,23 +1,45 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
-= YOUR Template Repo Roadmap
+= Stealth Glider Line Roadmap
 
-== Current Status
+This is the series roadmap. Each member keeps its own roadmap for its own
+scope; this document records the order of the line and what is known about
+each stage.
 
-Initial development phase.
+== The seven stages
 
-== Milestones
+----
+f19-stealth-glider -> f117a-stealth-glider -> sr71-blackglider -> x15-rocket-glider -> planer-1 -> enterglide-ncc-137-k -> tardis-rule-disruption
+----
 
-=== v0.1.0 - Foundation
-* [ ] Core functionality
-* [ ] Basic documentation
-* [ ] CI/CD pipeline
+. *f19-stealth-glider* (Operation Nightstep v2), shipped. Established substrate
+  interaction, phase and causal TRACE.
+. *f117a-stealth-glider* (Operation Nightglass), shipped. Added radar and a
+  proven-inert 3D camera over the 2D world.
+. *sr71-blackglider* (SR-71 BlackGlider), in progress. A single uncompromised
+  Conway spacetime with proof-bearing geometric flight presentation.
+. *x15-rocket-glider*, reserved. Scope not yet specified. The full name is
+  X15-rocket-glider; it is not to be shortened to X-15.
+. *planer-1* (Планер-1), reserved. Scope not yet specified.
+. *enterglide-ncc-137-k* (Enterglide NCC-137-K), reserved. Scope not yet
+  specified. The name is a Star Trek registry joke; spaces become dashes in
+  the slug.
+. *tardis-rule-disruption* (TARDIS), reserved. Recorded intent:
+  Totally-Adherent Rule-Disruption Imitation System: a machine that visibly appears to break and simulate disruption of rules while remaining mathematically Conway-lawful underneath.
 
-=== v1.0.0 - Stable Release
-* [ ] Full feature set
-* [ ] Comprehensive tests
-* [ ] Production ready
+== Status
 
-== Future Directions
+* [x] Chain and membership manifest published in this hub
+* [x] Four reserved members minted with identity and lineage
+* [ ] All seven members exist on GitHub and carry the chain (remote gate green)
+* [ ] Hub and members registered in gv-clade-index
+* [ ] Scope specified for stages four, five and six
 
-_To be determined based on community feedback._
+== Rules of the line
+
+* The chain string in this hub is canonical. Members copy it; they do not
+  edit it.
+* A member joins or moves only by pull request here, with matching lineage
+  edits in the affected members.
+* Reserved members hold identity and lineage only, until their scope is
+  specified.

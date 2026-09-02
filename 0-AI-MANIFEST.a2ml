@@ -5,11 +5,11 @@
 #
 [metadata]
 version = "0.1.0"
-last-updated = "{{CURRENT_DATE}}"
+last-updated = "2026-09-02"
 
 [project]
-name = "[YOUR-REPO-NAME]"
-purpose = "{{PROJECT_DESCRIPTION}}"
+name = "Stealth Glider Ecosystem"
+purpose = "Coordination hub for the Stealth Glider line: holds the canonical seven-stage chain, the membership manifest and the series roadmap. Manifest only; the games live in their own repositories."
 
 [ai-allocation]
 agents = [

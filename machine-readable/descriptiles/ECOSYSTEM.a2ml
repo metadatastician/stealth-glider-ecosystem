@@ -1,45 +1,40 @@
 # SPDX-License-Identifier: MPL-2.0
-# ECOSYSTEM.a2ml — Ecosystem position (META-TEMPLATE)
-#
-# This is the ECOSYSTEM file for rsr-template-repo itself. It records the
-# TEMPLATE's own position in the estate. When consumed by a new project,
-# replace these fields with the target project's ecosystem position and
-# related projects (see the NOTE FOR CONSUMERS at the bottom).
 
 [metadata]
-project = "rsr-template-repo"
-ecosystem = "hyperpolymath"
+project = "stealth-glider-ecosystem"
+ecosystem = "metadatastician"
 
 [position]
-type = "repository-template"
-purpose = "Canonical RSR-compliant repository template: scaffolding (CI/CD, AI manifests, ABI/FFI standards, container ecosystem, governance) that new hyperpolymath projects are instantiated from."
-# IS-NOT — anti-identity (the boundary-erosion guard; each line is a real past confusion)
+type = "coordination-hub"
+purpose = "Coordination hub for the Stealth Glider line: holds the canonical seven-stage chain, the membership manifest and the series roadmap. Manifest only; the games live in their own repositories."
 what-this-is-not = [
-  "a project in its own right",
-  "Scaffoldia (the full-featured repo designer)",
-  "standards (the canon source this template operationalises)",
+  "a game",
+  "a monorepo of the games",
+  "a submodule tree",
+  "the estate registry (that is gv-clade-index)",
 ]
 
 [pipeline]
-position = "foundation"
-chain = "standards → rsr-template-repo → (every estate repo)"
-notes = "rsr-template-repo turns the RSR standard into runnable scaffolding. New repos are created from it via `just repo-init`, which substitutes the {{PLACEHOLDER}} tokens."
-coordination = "standards"
+position = "coordination hub (outside the chain)"
+chain = "f19-stealth-glider -> f117a-stealth-glider -> sr71-blackglider -> x15-rocket-glider -> planer-1 -> enterglide-ncc-137-k -> tardis-rule-disruption"
+notes = "The chain string above is canonical. Every member's own ECOSYSTEM.a2ml must carry it verbatim and name this repository as coordination; scripts/check-membership.sh enforces both."
+coordination = "metadatastician/stealth-glider-ecosystem"
+
+[members]
+# One entry per chain position, in order. group: shipped | in-progress | reserved.
+# member-phase mirrors the member's own CLADE [status] phase at the time of writing.
+projects = [
+  { order = 1, name = "f19-stealth-glider", display = "Operation Nightstep v2", repo = "metadatastician/f19-stealth-glider", group = "shipped", member-phase = "active", slot = "first Stealth Glider investigation" },
+  { order = 2, name = "f117a-stealth-glider", display = "Operation Nightglass", repo = "metadatastician/f117a-stealth-glider", group = "shipped", member-phase = "active", slot = "second Stealth Glider investigation" },
+  { order = 3, name = "sr71-blackglider", display = "SR-71 BlackGlider", repo = "metadatastician/sr71-blackglider", group = "in-progress", member-phase = "incubating", slot = "third Stealth Glider investigation" },
+  { order = 4, name = "x15-rocket-glider", display = "X15-rocket-glider", repo = "metadatastician/x15-rocket-glider", group = "reserved", member-phase = "reserved", slot = "fourth Stealth Glider investigation" },
+  { order = 5, name = "planer-1", display = "Планер-1", repo = "metadatastician/planer-1", group = "reserved", member-phase = "reserved", slot = "fifth Stealth Glider investigation" },
+  { order = 6, name = "enterglide-ncc-137-k", display = "Enterglide NCC-137-K", repo = "metadatastician/enterglide-ncc-137-k", group = "reserved", member-phase = "reserved", slot = "sixth Stealth Glider investigation" },
+  { order = 7, name = "tardis-rule-disruption", display = "TARDIS", repo = "metadatastician/tardis-rule-disruption", group = "reserved", member-phase = "reserved", slot = "seventh Stealth Glider investigation" },
+]
 
 [related-projects]
 projects = [
-  { name = "standards", relationship = "standard-source", notes = "Defines the RSR standard, contractile canon, and policies that this template operationalises." },
-  { name = "stapeln", relationship = "build-tooling", notes = "Layer-based container build system; the template ships stapeln.toml scaffolding." },
-  { name = "selur-compose", relationship = "build-tooling", notes = "Service composition; the template ships selur-compose.toml scaffolding." },
-  { name = "k9-svc", relationship = "validation-tooling", notes = "Runs the self-validating k9.ncl checks (machine-readable/self-validating/)." },
-  { name = "cerro-torre", relationship = "signing-tooling", notes = "Container/image signing provider referenced by the container scaffolding." },
-  { name = "svalinn", relationship = "verification-tooling", notes = "Supply-chain verification referenced by the container scaffolding." },
-  { name = "vordr", relationship = "verification-tooling", notes = "Build/artifact verification referenced by the container scaffolding." },
+  { name = "rsr-template-repo", relationship = "repository template", notes = "Canonical RSR scaffold from which this repository was minted." },
+  { name = "a2ml-ecosystem", relationship = "pattern precedent", notes = "The coordination-hub shape (ANCHOR authority, membership gate, anchor-drift workflow) follows this hub." },
 ]
-
-# ---------------------------------------------------------------------------
-# NOTE FOR CONSUMERS: When using this template to create a new repo, replace
-# the project/purpose above and rewrite [related-projects] to describe YOUR
-# project's actual ecosystem. The entries above describe the TEMPLATE's own
-# position, not yours.
-# ---------------------------------------------------------------------------

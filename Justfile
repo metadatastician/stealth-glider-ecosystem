@@ -19,9 +19,9 @@ set positional-arguments := true
 import? "build/contractile.just"
 
 # Project metadata — customize these
-project := "rsr-template-repo"
-OWNER := "hyperpolymath"
-REPO := "rsr-template-repo"
+project := "stealth-glider-ecosystem"
+OWNER := "metadatastician"
+REPO := "stealth-glider-ecosystem"
 version := "0.1.0"
 tier := "infrastructure"  # 1 | 2 | infrastructure
 
@@ -48,7 +48,7 @@ help recipe="":
 
 # Show this project's info
 info:
-    @echo "Project: {{project}}"
+    @echo "Project: stealth_glider_ecosystem"
     @echo "Version: {{version}}"
     @echo "RSR Tier: {{tier}}"
     @echo "Recipes: $(just --summary | wc -w)"
@@ -87,7 +87,7 @@ import? "build/just/assess.just"
 
 # Build the project (debug mode)
 build *args:
-    @echo "Building {{project}} (debug)..."
+    @echo "Building stealth_glider_ecosystem (debug)..."
     # TODO: Replace with your build command
     # Examples:
     #   cargo build {{args}}                    # Rust
@@ -98,7 +98,7 @@ build *args:
 
 # Build in release mode with optimizations
 build-release *args:
-    @echo "Building {{project}} (release)..."
+    @echo "Building stealth_glider_ecosystem (release)..."
     # TODO: Replace with your release build command
     # Examples:
     #   cargo build --release {{args}}
@@ -137,18 +137,12 @@ clean-all: clean
 # Run all tests
 test *args:
     #!/usr/bin/env bash
-    # A check that cannot fail is not a check. This recipe MUST be replaced at
-    # mint with the project's real test command; until then it fails loudly
-    # rather than printing "Tests passed!" over an empty run.
-    #
-    # Replace this whole body with one of:
-    #   cargo test --workspace {{args}}
-    #   mix test {{args}}
-    #   zig build test {{args}}
-    #   deno test {{args}}
-    echo "FAIL: \`just test\` has not been wired to a real test command yet." >&2
-    echo "      Edit the 'test' recipe in the Justfile before relying on this gate." >&2
-    exit 1
+    # Hub gates: placeholder check, root shape, and the offline membership
+    # negative control. The remote membership check runs in CI (anchor-drift).
+    set -euo pipefail
+    bash scripts/check-no-placeholders.sh .
+    bash scripts/check-root-shape.sh .
+    bash tests/check-membership-test.sh
 
 # Run tests with verbose output
 test-verbose:
@@ -251,21 +245,17 @@ fmt:
 
 # Check formatting without changes
 fmt-check:
-    @echo "Checking formatting..."
-    # TODO: Replace with your format check
-    # Examples:
-    #   cargo fmt --check
-    #   mix format --check-formatted
-    #   gleam format --check
+    #!/usr/bin/env bash
+    # Formatting contract for a text-only tree: no trailing whitespace and
+    # every tracked text file ends with a newline.
+    set -euo pipefail
+    bash scripts/check-text-format.sh .
 
 # Run linter
 lint:
-    @echo "Linting source files..."
-    # TODO: Replace with your linter
-    # Examples:
-    #   cargo clippy -- -D warnings
-    #   mix credo --strict
-    #   gleam check
+    # V-language ban gate; the bracket keeps this line out of the gate pattern
+    bash scripts/check-no-v[l]ang.sh .
+    bash scripts/check-no-md-in-docs.sh .
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # RUN & EXECUTE
@@ -283,7 +273,7 @@ run-verbose *args: build
 
 # Install to user path
 install: build-release
-    @echo "Installing {{project}}..."
+    @echo "Installing stealth_glider_ecosystem..."
     # TODO: Replace with your install command
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -374,7 +364,7 @@ cookbook:
     #!/usr/bin/env bash
     mkdir -p docs
     OUTPUT="docs/just-cookbook.adoc"
-    echo "= {{project}} Justfile Cookbook" > "$OUTPUT"
+    echo "= stealth_glider_ecosystem Justfile Cookbook" > "$OUTPUT"
     echo ":toc: left" >> "$OUTPUT"
     echo ":toclevels: 3" >> "$OUTPUT"
     echo "" >> "$OUTPUT"
@@ -400,10 +390,10 @@ cookbook:
 man:
     #!/usr/bin/env bash
     mkdir -p docs/man
-    cat > docs/man/{{project}}.1 << EOF
-    .TH {{project}} 1 "$(date +%Y-%m-%d)" "{{version}}" "{{project}} Manual"
+    cat > docs/man/stealth_glider_ecosystem.1 << EOF
+    .TH stealth_glider_ecosystem 1 "$(date +%Y-%m-%d)" "{{version}}" "stealth_glider_ecosystem Manual"
     .SH NAME
-    {{project}} \- RSR-compliant project
+    stealth_glider_ecosystem \- RSR-compliant project
     .SH SYNOPSIS
     .B just
     [recipe] [args...]
@@ -412,7 +402,7 @@ man:
     .SH AUTHOR
     $(git config user.name 2>/dev/null || echo "Author") <$(git config user.email 2>/dev/null || echo "email")>
     EOF
-    echo "Generated: docs/man/{{project}}.1"
+    echo "Generated: docs/man/stealth_glider_ecosystem.1"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CI & AUTOMATION
@@ -473,16 +463,10 @@ state-phase:
     @sed -n 's/^[[:space:]]*phase[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' machine-readable/descriptiles/STATE.a2ml 2>/dev/null | head -1 || echo "unknown"
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# GUIX
+# GUIX (recipes removed at mint: guix.scm is not shipped by this repo)
 # ═══════════════════════════════════════════════════════════════════════════════
 
-# Enter Guix development shell (primary)
-guix-shell:
-    guix shell -D -f guix.scm
 
-# Build with Guix
-guix-build:
-    guix build -f guix.scm
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # HYBRID AUTOMATION
@@ -590,7 +574,7 @@ assail:
 
 # Self-diagnostic — checks dependencies, permissions, paths
 doctor:
-    @echo "Running diagnostics for rsr-template-repo..."
+    @echo "Running diagnostics for stealth-glider-ecosystem..."
     @echo "Checking required tools..."
     @command -v just >/dev/null 2>&1 && echo "  [OK] just" || echo "  [FAIL] just not found"
     @command -v git >/dev/null 2>&1 && echo "  [OK] git" || echo "  [FAIL] git not found"
@@ -600,7 +584,7 @@ doctor:
 
 # Guided tour of key features
 tour:
-    @echo "=== rsr-template-repo Tour ==="
+    @echo "=== stealth-glider-ecosystem Tour ==="
     @echo ""
     @echo "1. Project structure:"
     @ls -la
@@ -615,12 +599,12 @@ tour:
 
 # Open feedback channel with diagnostic context
 help-me:
-    @echo "=== rsr-template-repo Help ==="
+    @echo "=== stealth-glider-ecosystem Help ==="
     @echo "Platform: $(uname -s) $(uname -m)"
     @echo "Shell: $SHELL"
     @echo ""
     @echo "To report an issue:"
-    @echo "  https://github.com/hyperpolymath/rsr-template-repo/issues/new"
+    @echo "  https://github.com/metadatastician/stealth-glider-ecosystem/issues/new"
     @echo ""
     @echo "Include the output of 'just doctor' in your report."
 
