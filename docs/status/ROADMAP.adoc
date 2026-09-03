@@ -90,12 +90,32 @@ constraints, or game-design thinking. The owner's own tagline, offered as a
 joke: "maybe I'm the next Euclid... Euclid with cells rather than the
 floorboard tiles."
 
+==== Falsifiability shape (proposed wording, owner to settle)
+
+The open target has no measure yet, so without a declared shape the project
+could never be shown wrong. Proposed shape, recorded so it can be argued with
+rather than assumed:
+
+. Work proceeds facet by facet: one aspect of "reality" at a time.
+. Before a facet is attempted, three things are written down in that facet's
+  own record: the facet being imitated, the measure of resemblance for it,
+  and the acceptability bound the Conway construction must reach on that
+  measure. Declaring them after the attempt does not count.
+. A facet is falsified only by a proof that no construction in the declared
+  class can reach the bound, or by exhausting the declared class. A near miss
+  is a result, not a falsification.
+. A falsified facet closes that facet, never the project. The one thing that
+  can terminate a facet outright is a proof that reaching its bound requires
+  breaking B3/S23, because the hard invariant is the one thing never traded.
+
+Until the owner settles this wording it is a proposal, not a gate.
+
 == Status
 
 * [x] Chain and membership manifest published in this hub
 * [x] Four reserved members minted with identity and lineage
 * [x] All seven members exist on GitHub and carry the chain (remote gate green)
-* [ ] Hub and members registered in gv-clade-index
+* [x] Hub and members registered in gv-clade-index (2026-09-02, gv-clade-index 0ea9a41: total-repos 327)
 * [x] Intent recorded for stages four to seven (2026-09-02, owner ruling)
 * [ ] Specification (question, boundaries, first gate) for stages four to seven
 
