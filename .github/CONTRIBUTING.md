@@ -99,3 +99,22 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 [optional body]
 
 [optional footer]
+
+## Signed commits
+
+Estate policy requires every commit that reaches the default branch to be
+signed. If the required-signatures ruleset is active, GitHub refuses unsigned
+pushes. Check the live ruleset before relying on this enforcement:
+[SIGNING-POLICY](https://github.com/hyperpolymath/standards/blob/main/docs/SIGNING-POLICY.adoc).
+
+- **People and interactive agents** sign with an SSH key registered on GitHub
+  as a *signing* key (`gpg.format=ssh`, `user.signingkey=<key>.pub`,
+  `commit.gpgsign=true`). The committer email must be verified on that account.
+- **Apps, bots and workflows** never `git push` local commits. They write
+  through the API (`createCommitOnBranch` or the estate `signed-push` action)
+  so that GitHub signs each commit.
+- Use **squash** merges as estate policy. If the required-signatures ruleset is
+  active, it checks the commits introduced by the pull request, so an unsigned
+  commit can block the merge. Re-create such a branch with signed commits
+  (`git cherry-pick -S`) and open a new PR. Check the repository's live merge
+  settings before stating that rebase merging is disabled.
