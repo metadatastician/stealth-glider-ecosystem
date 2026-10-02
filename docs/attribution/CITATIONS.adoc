@@ -34,4 +34,4 @@ Jewell, J. (2026). _Stealth Glider Ecosystem_ [Computer software]. GitHub. https
 
 == See Also
 
-* link:CITATION.cff[CITATION.cff]
+* link:../../CITATION.cff[CITATION.cff]
